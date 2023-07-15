@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-one</title>
+</head>
+<body  style="line-height: 2">
+    
+    <div class="application-form">
+        <h1>01.Application Form</h1>
+        <form id="form">
+            <div>
+                <label for="name">Name :</label>
+                <input type="text" name="name"  id="name" placeholder="Enter your name" required>    
+            </div>
+            <div>
+                <label for="email">email :</label>
+                <input type="email" name="email"  id="email" placeholder="Enter your email" required>    
+            </div>
+            <div>
+                <label>Gender :</label>
+                <input type="radio" name="gender" id="male" value="male" required>
+                <label for="male">Male</label>
+    
+                <input type="radio" name="gender" id="female" value="female" required>
+                <label for="female">Female</label>
+            </div>
+                  
+            <div>
+                Choose Skills :
+    
+                <label for="html">HTML</label>
+                <input type="checkbox" name="html" id="html">
+    
+                <label for="css">CSS</label>
+                <input type="checkbox" name="css" id="css">
+    
+                <label for="js">JavaScript</label>
+                <input type="checkbox" name="js" id="js">
+    
+                <label for="bootstrap">Bootstrap</label>
+                <input type="checkbox" name="bootstrap" id="bootstrap">
+    
+                <label for="react">REACT</label>
+                <input type="checkbox" name="react" id="react" value="react">
+            </div>
+    
+            <div>
+                <label for="jobtype">Jobtype</label>
+                <select name="jobtype" id="jobtype">
+                    <!-- // The option tags are made by js :) -->
+                </select>
+            </div>
+    
+            <div>
+                <label for="browserlist">Choose your browser from the list :</label>
+                <input type="text" name="browserlist" id="browserlist">
+            </div>
+            
+            <div>
+                <label for="summary"></label>
+                <textarea name="summary" id="summary" placeholder="Give a brief summary about you" cols="30" rows="10" required></textarea>
+            </div>
+    
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+   <div class="batch-list">
+
+    <h1>02.batch-list</h1>
+
+    <ul type="square">
+        <li>SENCHOLA UNIVERSITY</li>
+    </ul>
+
+    <ol>
+        <li>First Batch</li>
+        <ol type="A">
+            <li>Ravi</li>
+            <li>Manol</li>
+            <li>Sandhiya</li>
+        </ol>
+
+        <li>Second Batch</li>
+        <ol type="I">
+            <li>Sundar</li>
+            <li>Saranya</li>
+            <li>Nandhini</li>
+        </ol>
+
+        <li>Third Batch</li>
+        <ol type="i">
+            <li>Monika</li>
+            <li>Santhosh</li>
+            <li>Kanna</li>
+        </ol>
+
+    </ol>
+   </div>
+   <div class="course-table">
+    <h1>03.Course</h1>
+    <table border="1">
+        <tr>
+            <th>S.NO 1</th>
+            <th>S.NO 2</th>
+            <th>S.NO 3</th>
+            <th>S.NO 4</th>
+        </tr>
+        <tr>
+            <td rowspan="2"> REACT JS</td>
+            <td>HTML</td>
+            <td rowspan="2"> REACT JS</td>
+            <td>CSS</td>
+        </tr>
+        <tr>
+            <td>CSS</td>
+            <td>HTML</td>
+        </tr>
+        <tr>
+            <td colspan="2">JavaScript</td>
+            <td colspan="2">Bootstrap</td>
+
+        </tr>
+    </table>
+   </div>
+
+    <script>
+        
+        const jobtypeList = [
+            "FRONT END DEVOLPMENT",
+            "BACKEND DEVOLPMENT",
+            "MOBILE APP DEVOLPMENT",
+            "WORDPRESS DEVOLPMENT",
+            "SOCIAL MEDIA MANAGEMENT",
+            "YOUTUBE /CONTENT CREATION",        
+            "CONTENT WRITING",
+            "GRAPHICS DESIGN",
+            "VIDEO EDITING",
+            "UI/UX DESIGN",
+            "VIDEO SHOOTING",
+            "DEVOPS(CLOUD)",
+            "CYBERSECURITY",
+            "SOFTWARE TESTING",
+            "IT SALES(INTERNATIONAL SALES)",
+            "BUSINESS DEVOLPMENT",
+            "DATA ANALYTICS",
+            "HR/ADMIN",
+            "BUSINESS ANALYSIS"
+        ]
+
+        function generateOptionList(ary) {
+            let items = "";
+            for (let i = 0; i < ary.length; i++) {
+        
+                items += `<option value='${ary[i]}'>${ary[i]}</option>`;
+            }
+            return items;
+        }
+
+        const jobtype = document.getElementById('jobtype');
+        jobtype.innerHTML = `${generateOptionList(jobtypeList)}`;  
+    </script>
+</body>
+</html>
